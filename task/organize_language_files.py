@@ -19,22 +19,7 @@ def move_file(file_path: str,dir_path:str ) -> None:
         file_path (str): source file path to be copied
         dir_path (str): distination where to copy to
     """
-    # i understood from the pdf that we want to organize the files; meaning MOVE not copy them
     shutil.move(file_path, dir_path)
-
-def load_config() -> Tuple[str, str]:
-    """loads the source/dist dirs from `config.ini` and returns them. 
-
-    Returns:
-        Tuple[str, str]: (source_dir, dist_sir)
-    """
-    config = configparser.ConfigParser()
-    config.read( os.path.join(os.path.abspath(os.getcwd()),"config.ini" ) )
-
-    return (
-        config["DEFAULT"].get("root_dir", ""),
-        config["DEFAULT"].get("organized_files_dir", "")
-    )
 
 def parse_args() -> Tuple[str, str]:
     """parses the CMD args and return a tuble with them
@@ -58,7 +43,6 @@ def parse_args() -> Tuple[str, str]:
                         help='dir where the files will be sorted in')
     
     args = parser.parse_args()
-
     return (args.source, args.dist)
 
 def organize_files(root_dir: str, dist_dir:str) -> int:

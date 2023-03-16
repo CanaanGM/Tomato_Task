@@ -48,7 +48,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-task.organize_language_files">task.organize_language_files module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#task.organize_language_files.create_dir_if_doesnt_exist"><code class="docutils literal notranslate"><span class="pre">create_dir_if_doesnt_exist()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#task.organize_language_files.load_config"><code class="docutils literal notranslate"><span class="pre">load_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task.organize_language_files.get_file_language_from_path"><code class="docutils literal notranslate"><span class="pre">get_file_language_from_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task.organize_language_files.list_files_in_dir"><code class="docutils literal notranslate"><span class="pre">list_files_in_dir()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#task.organize_language_files.move_file"><code class="docutils literal notranslate"><span class="pre">move_file()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#task.organize_language_files.organize_files"><code class="docutils literal notranslate"><span class="pre">organize_files()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#task.organize_language_files.parse_args"><code class="docutils literal notranslate"><span class="pre">parse_args()</span></code></a></li>
@@ -102,15 +103,35 @@
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="task.organize_language_files.load_config">
-<span class="sig-prename descclassname"><span class="pre">task.organize_language_files.</span></span><span class="sig-name descname"><span class="pre">load_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/task/organize_language_files.html#load_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#task.organize_language_files.load_config" title="Permalink to this definition"></a></dt>
-<dd><p>loads the source/dist dirs from <cite>config.ini</cite> and returns them.</p>
+<dt class="sig sig-object py" id="task.organize_language_files.get_file_language_from_path">
+<span class="sig-prename descclassname"><span class="pre">task.organize_language_files.</span></span><span class="sig-name descname"><span class="pre">get_file_language_from_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/task/organize_language_files.html#get_file_language_from_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#task.organize_language_files.get_file_language_from_path" title="Permalink to this definition"></a></dt>
+<dd><p>extracts the language from the file path, could used regex but simplicity is best</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>(source_dir, dist_sir)</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – where the file live</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>Tuple[str, str]</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the language of the file</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="task.organize_language_files.list_files_in_dir">
+<span class="sig-prename descclassname"><span class="pre">task.organize_language_files.</span></span><span class="sig-name descname"><span class="pre">list_files_in_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/task/organize_language_files.html#list_files_in_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#task.organize_language_files.list_files_in_dir" title="Permalink to this definition"></a></dt>
+<dd><p>asks the OS to list all files/folders in dir_path</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dir_path</strong> (<em>str</em>) – where the directory lives</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the content of the directory</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
 </dd>
 </dl>
 </dd></dl>

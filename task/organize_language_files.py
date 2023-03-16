@@ -37,6 +37,11 @@ def load_config() -> Tuple[str, str]:
     )
 
 def parse_args() -> Tuple[str, str]:
+    """parses the CMD args and return a tuble with them
+
+    Returns:
+        Tuple[str, str]: (source directory, destination directory)
+    """
     parser = argparse.ArgumentParser(description="🍅🍅 task",
                                       formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument('-version', action='version', version='Version ' + "0.0.5",

@@ -109,6 +109,11 @@
     <span class="p">)</span></div>
 
 <div class="viewcode-block" id="parse_args"><a class="viewcode-back" href="../../task.html#task.organize_language_files.parse_args">[docs]</a><span class="k">def</span> <span class="nf">parse_args</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;parses the CMD args and return a tuble with them</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Tuple[str, str]: (source directory, destination directory)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;🍅🍅 task&quot;</span><span class="p">,</span>
                                       <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">RawTextHelpFormatter</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-version&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;Version &#39;</span> <span class="o">+</span> <span class="s2">&quot;0.0.5&quot;</span><span class="p">,</span>

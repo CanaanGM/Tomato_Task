@@ -32,8 +32,8 @@ a file organization task by Tomato +.
 ## how to run ?
 
 ```bash
- git clone <repo>
- cd <repo>
+ git clone https://github.com/CanaanGM/Tomato_Task
+ cd Tomato_Task
  python organize_language_files.py 
 ```
 

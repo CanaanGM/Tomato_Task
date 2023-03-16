@@ -1,8 +1,7 @@
-Heya~!
 
 ## Tomato + task = tomask
 
-a file organization task by Tomato +.
+a file organization task for Tomato +.
 
 ---
 
@@ -59,5 +58,3 @@ can be accessed from: `docs/_build/index.html`
  python organize_language_files.py -s <path to source files> -d <path to where to organize>
 
 ```
-
-alternativly put on some shoes and away u go!

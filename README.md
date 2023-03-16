@@ -42,8 +42,10 @@ a file organization task by Tomato +.
 
 ```powershell
 sphinx-apidoc -F -H Tomato-Task  -A Canaan  -V 0.0.1 -o .\docs\ .\task\
-sphinx-build -b html .\docs\ .\docs\_build
+sphinx-build -b html .\docs\ .\docs\_build # every time u make a change
 ```
+
+can be accessed from: `docs/_build/index.html`
 
 ---
 

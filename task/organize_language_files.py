@@ -57,6 +57,27 @@ def parse_args() -> Tuple[str, str]:
     args = parser.parse_args()
     return (args.source, args.dist)
 
+def list_files_in_dir(dir_path: str) -> list[str]:
+    """asks the OS to list all files/folders in dir_path
+
+    Args:
+        dir_path (str): where the directory lives
+
+    Returns:
+        list[str]: the content of the directory
+    """
+    return os.listdir(dir_path)
+
+def get_file_language_from_path(file_path: str) -> str:
+    """extracts the language from the file path, could used regex but simplicity is best
+
+    Args:
+        file_path (str): where the file live
+
+    Returns:
+        str: the language of the file
+    """
+    return file_path.split("-")[0]
 
 def organize_files(root_dir: str, dist_dir: str) -> int:
     """Organizes the files from the `source dir` to the `dist dir`
@@ -69,11 +90,11 @@ def organize_files(root_dir: str, dist_dir: str) -> int:
         int: the length of the sorted directory. not recursive!
     """
     try:
-        unsorted_files = os.listdir(root_dir)
+        unsorted_files = list_files_in_dir(root_dir)
 
         if unsorted_files:
-            for file_path in os.listdir(root_dir):
-                file_name = file_path.split("-")[0]
+            for file_path in unsorted_files:
+                file_name = get_file_language_from_path(file_path)
 
                 create_dir_if_doesnt_exist(os.path.join(dist_dir, file_name))
 

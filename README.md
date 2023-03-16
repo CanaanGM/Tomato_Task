@@ -34,10 +34,11 @@ a file organization task by Tomato +.
 #### **Documentation**
 >
 
-> done via [sphinx](https://www.sphinx-doc.org/en/master/usage/quickstart.html)
+- done via [sphinx](https://www.sphinx-doc.org/en/master/usage/quickstart.html)
 
-> i learned any function prefixed with `_` will not show up in the docs
-to build the docs :
+> any function prefixed with `_` will not show up in the docs
+
+## to build the docs
 
 ```powershell
 sphinx-apidoc -F -H Tomato-Task  -A Canaan  -V 0.0.1 -o .\docs\ .\task\

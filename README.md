@@ -17,15 +17,32 @@ a file organization task by Tomato +.
 
 ### design
 
-#### Performance
+#### ***Performance***
 >
 >performance of the script is not really a factor cause we rely on the host OS to do the work, as we are only moving files and not doing any kind of work on them.
 
-#### config file vs args
+#### **config file** *vs* **args**
 >
 > i've wanted to use `toml` but as it is not in the core python libs its out!
 
-> i considered using `click` or `argparser` but settled on a `config` file so you can just run the script by `python <script.bye>`.
+> i considered using `click`, `argparser` or a `config` file, after dwelling on it for a bit a `config` file will tie you down so i went with `arg parser` for simplicity.
+
+### **code**
+>
+> organized by 4 functions that use each other cause simplicity rules
+
+#### **Documentation**
+>
+
+> done via [sphinx](https://www.sphinx-doc.org/en/master/usage/quickstart.html)
+
+> i learned any function prefixed with `_` will not show up in the docs
+to build the docs :
+
+```powershell
+sphinx-apidoc -F -H Tomato-Task  -A Canaan  -V 0.0.1 -o .\docs\ .\task\
+sphinx-build -b html .\docs\ .\docs\_build
+```
 
 ---
 
@@ -33,8 +50,11 @@ a file organization task by Tomato +.
 
 ```bash
  git clone https://github.com/CanaanGM/Tomato_Task
- cd Tomato_Task
+ cd Tomato_Task\task
  python organize_language_files.py 
+ # or
+ python organize_language_files.py -s <path to source files> -d <path to where to organize>
+
 ```
 
 alternativly put on some shoes and away u go!

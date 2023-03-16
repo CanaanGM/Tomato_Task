@@ -71,7 +71,7 @@ def organize_files(root_dir: str, dist_dir: str) -> int:
     try:
         unsorted_files = os.listdir(root_dir)
 
-        if len(unsorted_files) > 0:
+        if unsorted_files:
             for file_path in os.listdir(root_dir):
                 file_name = file_path.split("-")[0]
 
@@ -87,7 +87,6 @@ def organize_files(root_dir: str, dist_dir: str) -> int:
         return -1
     except Exception as ex:
         print(ex)
-        print("not really needed or placed correctly but meh")
         return -1
 
 

@@ -51,7 +51,7 @@ can be accessed from: `docs/_build/index.html`
 ## how to run ?
 
 ```bash
- git clone https://github.com/CanaanGM/Tomato_Task
+ git clone --depth 1 https://github.com/CanaanGM/Tomato_Task
  cd Tomato_Task\task
  python organize_language_files.py 
  # or
